@@ -17,4 +17,11 @@ playList <- read.csv("Data/PlayList.csv")
 players <- playList %>% 
     group_by(PlayerKey) %>% 
     summarize(PlayerKey = PlayerKey, Position = Position) %>% 
-    distinct()
+    distinct() %>% 
+    filter(Position != "Missing Data") 
+
+
+
+
+
+
